@@ -2,16 +2,28 @@
 $color-primery:#55c57a;
 $color-primery-light: #7ed56f;
 $color-primery-dark:#28b485;
-$color-grey:#777;
+$color-grey:#777; 
+$color-gray-1:#999;
+$color-gray-dark:#333;
 $color-white:#fff;
-$color-grey-light:#faf9f9;
+$color-grey-light:#f7f7f7;
+$color-grey-light-1:#eee;
+
 $color-black:black;
+$color-secondary-light:#ffb900;
+$color-secondary-dark:#ff7730;
+$color-secondary-1-light:#2998ff;
+$color-secondary-1-dark:#5643f9;
 
 
+
+//font-size
+$default-font-size:1.6rem;
 
 
 // GRID
 $grid-width:114rem;
 $gutter-vertical:8rem;
-$gutter-horizontal:3rem;
+$gutter-vertical-small:6rem;
+$gutter-horizontal:6rem;
 

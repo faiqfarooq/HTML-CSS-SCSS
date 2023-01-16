@@ -1,0 +1,202 @@
+.card-box{
+    //Funcationally
+    perspective: 150rem;
+    position: relative;
+    height: 52rem;
+
+
+      &_side{
+        height: 52rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        backface-visibility: hidden;
+        overflow: hidden;
+        border-radius: 3px;
+        box-shadow: 0 1.5rem 4rem rgba(black,0.15);
+        transition: all .8s ease;
+           &_front{
+                background-color: $color-white;
+                  }
+            &_back{
+              
+                transform: rotateY(180deg);
+                &-1{
+                    background-image: linear-gradient(to right bottom ,$color-secondary-light, $color-secondary-dark );
+                }
+                &-2{
+                    background-image: linear-gradient(to right bottom ,$color-primery-light, $color-primery-dark );
+                }
+                
+                &-3{
+                    background-image: linear-gradient(to right bottom ,$color-secondary-1-light, $color-secondary-1-dark );
+                }
+                
+                  }
+    }
+  &:hover &_side_front{
+        transform: rotateY(-180deg);
+    }
+    
+  &:hover &_side_back{
+    transform: rotateY(0);
+}
+//card front side
+&_img{
+    height: 23rem;
+    background-size: cover;
+    background-blend-mode:screen;
+    -webkit-clip-path:polygon(0 0,100% 0,100% 85%,0 100% );
+    clip-path: polygon(0 0,100% 0,100% 85%,0 100% );
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+
+    &-1{
+        background-image:linear-gradient(to right bottom ,$color-secondary-light, $color-secondary-dark ), url(../../img/nat-5.jpg);
+
+    }
+    &-2{
+        background-image:linear-gradient(to right bottom ,$color-primery-light, $color-primery-dark ), url(../../img/nat-6.jpg);
+
+    }
+    &-3{
+        background-image:linear-gradient(to right bottom ,$color-secondary-1-light, $color-secondary-1-dark ), url(../../img/nat-7.jpg);
+
+    }
+}
+&_heading{
+    font-size: 2.8rem;
+    position: absolute;
+    text-align: right;
+    font-weight: 400;
+    top: 12rem;
+    right: 2rem;
+    color: white;
+    text-transform: uppercase;
+    width: 75%;
+}
+&_heading-span {
+    padding: 1rem 1.5rem;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    &_1{
+        background-image: linear-gradient(to right bottom ,rgba($color-secondary-light,.85),rgba( $color-secondary-dark ,.85));
+        
+    }
+    &_2{
+        background-image: linear-gradient(to right bottom ,rgba($color-primery-light,.85),rgba( $color-primery-dark ,.85));
+        
+    }
+    &_3{
+        background-image: linear-gradient(to right bottom ,rgba($color-secondary-1-light,.85),rgba( $color-secondary-1-dark ,.85));
+        
+    }
+}
+&_details{
+    padding: 3rem;
+    ul{
+        list-style: none;
+        width: 80%;
+        margin: 0 auto;
+        li{
+            font-size: 1.5rem;
+            padding: 1rem;
+            text-align: center;
+            &:not(:last-child){
+                border-bottom: 1px solid #eee;
+            }
+        }
+    }
+
+}
+// card back side
+&__cta{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    width: 90%;
+
+}
+&__price-only{
+    font-size: 1.4rem;
+    text-transform: uppercase;
+
+}
+&__price-value{
+    font-size: 6rem;
+    font-weight: 100;
+}
+&__price-box{
+    text-align: center;
+    color: $color-white;
+    margin-bottom: 8rem;
+}
+
+
+/////////////////////////////////////
+// @include respond(tab-port){ 
+    @media only screen and (max-width:56.5em),
+    only screen and (hover:none){   // it samll devices the card will not hovers as they are touch devices and we can hover it
+    height: auto;
+    border-radius: 3px;
+    background-color: $color-white;
+    box-shadow: 0 1.5rem 4rem rgba(black,0.15); 
+  
+      &_side{
+        height: auto;
+        position: relative;
+        border-radius: 3px; 
+        box-shadow: none;
+           
+            &_back{
+              
+                transform: rotateY(0);
+                clip-path: polygon(0 20%,100% 0, 100% 100%, 0 100% );
+                  }
+    }
+  &:hover &_side_front{
+        transform: rotateY(0);
+    }
+    &_details{
+        padding: 1rem 3rem;
+    }
+// card back side
+&__cta{
+    position: relative;
+    left: 0;
+    top: 0;
+    transform: translate(0) ;
+    padding: 4rem;
+    padding: 7rem 4rem 4rem 4rem;
+    width: 100%;
+}
+
+&__price-value{
+    font-size: 6rem;
+}
+&__price-box{
+    margin-bottom: 4rem;
+}
+
+  }
+////////////////////////////phone////////////////
+  @include respond(phone){
+
+   
+          &_side{
+        
+               
+                &_back{
+                 
+                    clip-path: polygon(evenodd, 37.5% 36%, 62.5% 36%, 75% 11%, 85.71% 36%, 75.25% 100%, 56.25% 91%, 62.5% 86%, 62.5% 60.07%, 75% 50.57%, 57.92% 50.57%, 62.5% 60.07%, 62.5% 86%, 50% 96%, 37.5% 86%, 37.5% 60.07%, 25% 50.57%, 42.08% 50.57%, 37.5% 60.07%, 37.5% 86%, 43.75% 91%, 25.75% 100%, 14.29% 36%, 25.9% 11%);
+                
+
+
+                      }
+        }
+  }
+
+}
